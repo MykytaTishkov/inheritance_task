@@ -10,6 +10,11 @@ typedef struct
     Parent P;
 } Child;
 
+void ShowParentName(Parent *pParent)
+{
+    printf("I`m %c\n", pParent->Name_index);
+}
+
 int main()
 {
     Parent *A;
@@ -17,5 +22,5 @@ int main()
     B = calloc(1, sizeof(Parent));
     B->P.Name_index = 'C';
     A = (Child*)B;
-    printf("I`m %c\n", A->Name_index);
+    ShowParentName(&A);
 }
