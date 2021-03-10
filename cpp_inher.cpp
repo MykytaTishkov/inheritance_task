@@ -7,9 +7,10 @@ using std::string;
 class CParent
 {
 public:
-    virtual void PrintName()
+    virtual void PrintName() = 0;
+    void exec()
     {
-        cout << "I`m parent" << endl;
+        PrintName();
     }
 };  
 
@@ -27,5 +28,5 @@ int main ()
     CParent *first;
     CChild *second;
     first = new CChild;
-    first->PrintName();
+    first->exec();
 }
